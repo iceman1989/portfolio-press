@@ -4,7 +4,9 @@
  *
  * @package Portfolio Press
  */
-
+if (post_password_required( $post->post_parent )) :
+        wp_redirect(get_permalink($post->post_parent));
+else :
 get_header(); ?>
 
 		<div id="primary" class="image-attachment">
@@ -106,4 +108,7 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php 
+get_footer(); 
+endif; 
+?>
